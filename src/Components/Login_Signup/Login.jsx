@@ -1,4 +1,3 @@
-import "./login.css";
 import React, { useState } from "react";
 import { ColorButton } from "../ProdCard/popperprodcard";
 import { useDispatch, useSelector } from "react-redux";
@@ -16,80 +15,81 @@ const Login = () => {
     const { name, value } = e.target;
     setUser({ ...userdata, [name]: value });
   };
-  if (user.token != undefined) {
+
+  if (user.token !== undefined) {
     console.log(user._id);
     return <Navigate to={"/"} />;
   }
+
   return (
-    <div>
-      <div className="loginDiv">
-        <h4>Log In to Your Udemy Account!</h4>
-        <hr className="hr_line_login"></hr>
+    <div className="flex justify-center items-center min-h-[80vh] bg-gray-100">
+      <div className="w-[350px] p-6 bg-white border rounded-lg shadow-lg">
+        <h4 className="text-xl font-bold text-center mb-4">
+          Log In to Your Udemy Account!
+        </h4>
+        <hr className="mb-6" />
 
-        {/* <div className="img_tag">
-          <img
-            src="	https://img-c.udemycdn.com/user/50x50/anonymous_3.png"
-            alt=""
-          />
-          <p>Welcome back, {"Yashas"}</p>{" "}
-        </div> */}
-
-        <div className="login_inputDiv">
-          {error ? (
-            <Alert className="alert" severity="error">
+        <div className="space-y-4">
+          {error && (
+            <Alert className="mb-4" severity="error">
               <p>There was a problem logging in.</p>
               <p>Check your email and password or create an account.</p>
             </Alert>
-          ) : (
-            <></>
           )}
           <input
             onChange={handleChange}
             name="email"
             type="email"
-            placeholder="email"
-            className="login_pw"
-          ></input>
+            placeholder="Email"
+            className="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500"
+          />
           <input
             onChange={handleChange}
             name="password"
             type="password"
-            placeholder="Passward"
-            className="login_pw"
-          ></input>
+            placeholder="Password"
+            className="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500"
+          />
 
-          {/* <button id="login_input">Log in</button> */}
-          <ColorButton
-            onClick={() => {
-              const URL = "https://udemy-vr4p.onrender.com/join/login-popup";
-              dispatch(authFunction(userdata, URL));
-            }}
-            id="login_input"
-          >
-            {loading ? (
-              <CircularProgress style={{ color: "white" }} />
-            ) : (
-              "Log in"
-            )}
-          </ColorButton>
+          <div className="flex justify-center">
+            <ColorButton
+              onClick={() => {
+                const URL = "https://udemy-vr4p.onrender.com/join/login-popup";
+                dispatch(authFunction(userdata, URL));
+              }}
+              className="w-full bg-purple-600 text-white py-3 rounded-lg font-semibold hover:bg-purple-700"
+            >
+              {loading ? (
+                <CircularProgress style={{ color: "white" }} />
+              ) : (
+                "Log in"
+              )}
+            </ColorButton>
+          </div>
+
         </div>
 
-        <div className="forgot_pws">
-          <span className="forgot_pw">or </span>
-          <a href="#">Forgot Password</a>
-          <div className="diff_acct">
-            <a href="#">Log in</a>to a <a href="#">different account</a>
-          </div>{" "}
+        <div className="text-center mt-4">
+          <span>or </span>
+          <a href="#" className="text-blue-600 hover:underline">
+            Forgot Password
+          </a>
         </div>
 
-        <div className="login_org">
+        <div className="text-center mt-4">
+          <a href="#" className="text-blue-600 hover:underline">
+            Log in to a different account
+          </a>
+        </div>
+
+        <div className="text-center mt-6">
           <p>
             Don't have an account?{" "}
-            <span>
-              <a href="#">Sign up</a>
-            </span>
+            <a href="#" className="text-blue-600 hover:underline">
+              Sign up
+            </a>
           </p>
-          <a href="#" className="login_org1">
+          <a href="#" className="text-blue-600 hover:underline font-semibold">
             Log in with your organization
           </a>
         </div>

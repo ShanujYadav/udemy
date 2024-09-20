@@ -1,5 +1,5 @@
 import { Header } from "../Header/Header";
-import "../Header/header.css";
+
 import banner from "../../assets/middle.jpg";
 import { Link } from "react-router-dom";
 import { ProdCard, SuggestionCard, TechCard } from "../ProdCard/ProdCard";
