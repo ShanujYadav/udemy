@@ -1,9 +1,5 @@
 import React from "react";
 import "./wishlist.css";
-import { Header } from "../Header/Header";
-import { ProdCard } from "../ProdCard/ProdCard";
-import "../ProdCard/prod.css";
-
 import PropTypes from "prop-types";
 import { useTheme } from "@mui/material/styles";
 import AppBar from "@mui/material/AppBar";
@@ -11,9 +7,8 @@ import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
-import TextField from "@mui/material/TextField";
+import TextField from "@mui/material/TextField"
 
-import IconButton from "@mui/material/IconButton";
 
 const Wishlist = () => {
   return (
@@ -74,26 +69,8 @@ const Wishlist = () => {
           variant="outlined"
         />
       </Box>
-
-      <Wishcard />
     </div>
   );
 };
 
 export default Wishlist;
-
-const Wishcard = () => {
-  return (
-    <div style={{ marginTop: "1.5rem" }} className="tec-cont">
-      <div>
-        <div className="prod-cont">
-          <ProdCard />
-          <ProdCard />
-          <ProdCard />
-          <ProdCard />
-          <ProdCard />
-        </div>
-      </div>
-    </div>
-  );
-};

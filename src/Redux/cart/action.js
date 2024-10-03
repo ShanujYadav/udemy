@@ -8,6 +8,7 @@ export const addToCartLoading = (status) => ({
   type: ADDTOCART_LOADING,
   payload: status,
 });
+
 export const addToCartError = (status) => ({
   type: ADDTOCART_ERROR,
   payload: status,
@@ -24,8 +25,8 @@ export const addToCartFunction = (data, URL) => (dispatch) => {
       console.log(data);
     })
     .catch((err) => {
-      console.log(err.message);
-      dispatch(addToCartError(true));
-      dispatch(addToCartLoading(false));
-    });
+      console.log(err.message)
+      dispatch(addToCartError(true))
+      dispatch(addToCartLoading(false))
+    })
 };

@@ -13,10 +13,10 @@ const loggerMiddleware = (store) => (next) => (action) => {
   if (typeof action === "function") {
     return action(store.dispatch);
   }
-  next(action);
-};
+  next(action)
+}
 
 export const store = createStore(
   rootReducer,
   applyMiddleware(loggerMiddleware)
-);
+)
