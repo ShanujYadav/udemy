@@ -4,7 +4,7 @@ const initState = {
   user: {},
   loading: false,
   error: false,
-};
+}
 
 export const authReducer = (store = initState, { type, payload }) => {
   // console.log(payload);

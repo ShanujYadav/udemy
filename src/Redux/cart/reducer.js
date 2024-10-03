@@ -4,10 +4,10 @@ const initState = {
   cart: 0,
   loading: false,
   error: false,
-};
+}
 
 export const cartReducer = (store = initState, { type, payload }) => {
-  console.log(payload, "cart");
+  console.log("cart payload--", payload)
   switch (type) {
     case ADDTOCART:
       return { ...store, cart: store.cart + payload };
@@ -16,6 +16,6 @@ export const cartReducer = (store = initState, { type, payload }) => {
     case ADDTOCART_ERROR:
       return { ...store, error: payload };
     default:
-      return store;
+      return store
   }
-};
+}
