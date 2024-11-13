@@ -73,9 +73,8 @@ const FAQs = () => {
         {faqs.map((faq, index) => (
           <div
             key={index}
-            className={`border border-black rounded-lg overflow-hidden  transition-all duration-300 ${
-              openFAQ === index ? "bg-white" : "bg-white"
-            }`}
+            className={`border border-black rounded-lg overflow-hidden  transition-all duration-300 ${openFAQ === index ? "bg-white" : "bg-white"
+              }`}
           >
             <div
               className="flex justify-between items-center p-4 cursor-pointer"

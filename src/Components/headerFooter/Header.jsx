@@ -89,7 +89,7 @@ export const Header = () => {
           <Link to={"/"} className="no-underline text-sm text-gray-700">
             My Courses
           </Link>
-          <Link to={"#"} className="no-underline text-sm text-gray-700">
+          <Link to={"/teach"} className="no-underline text-sm text-gray-700">
             Teach
           </Link>
 

@@ -4,17 +4,9 @@ const VideoUpload = () => {
   const [thumbnail, setThumbnail] = useState(null);
   const [video, setVideo] = useState(null);
 
-  const handleThumbnailUpload = (e) => {
-    setThumbnail(e.target.files[0]);
-  };
-
-  const handleVideoUpload = (e) => {
-    setVideo(e.target.files[0]);
-  };
 
   return (
     <div className="min-h-screen bg-gradient-to-r from-indigo-100 to-purple-100 flex flex-col">
-      {/* Header */}
       <header className="bg-indigo-600 text-white py-16 w-full">
         <div className="w-full text-center">
           <h1 className="text-4xl font-extrabold">Upload Your Video Course</h1>
@@ -24,15 +16,12 @@ const VideoUpload = () => {
         </div>
       </header>
 
-      {/* Main Content */}
       <main className="flex-grow w-full py-12 px-4 flex flex-col items-center">
-        {/* Form Section */}
         <div className="bg-white shadow-xl rounded-lg w-full p-12 relative">
           <h2 className="text-3xl font-semibold text-gray-800 mb-6 text-center">
             Upload Your Video Course
           </h2>
 
-          {/* Video Thumbnail Upload */}
           <div
             className="bg-gray-200 border border-gray-300 rounded-lg p-10 shadow-md flex flex-col justify-center items-center cursor-pointer transition-all hover:shadow-lg"
             style={{ width: "700px", height: "300px", margin: "0 auto" }}
@@ -72,12 +61,11 @@ const VideoUpload = () => {
             <input
               type="file"
               accept="image/*"
-              onChange={handleThumbnailUpload}
+              onChange={(e) => setThumbnail(e.target.files[0])}
               className="hidden"
             />
           </div>
 
-          {/* Video Upload Section */}
           <div className="mt-6 flex items-center justify-center">
             <label className="block text-sm font-medium text-gray-700 mr-4">
               Upload Video
@@ -85,16 +73,42 @@ const VideoUpload = () => {
             <input
               type="file"
               accept="video/*"
-              onChange={handleVideoUpload}
+              onChange={(e) => setVideo(e.target.files[0])}
               className="block text-sm text-gray-500 border border-gray-300 rounded-lg p-2"
-            />
-            {video && (
-              <p className="ml-4 text-sm text-gray-700">{video.name}</p>
-            )}
+            />a
           </div>
 
-          {/* Course Form */}
           <form className="mt-8 w-2/3 mx-auto">
+            <div className="mb-6">
+              <label htmlFor="title" className="block text-sm font-medium text-gray-700">
+                Course Categeory
+              </label>
+              <select
+                id="quantity"
+                className="mt-1 p-3 block w-full border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                placeholder="Select a number"
+              >
+                <option value="">Select Category</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+              </select>
+            </div>
+            <div className="mb-6">
+              <label htmlFor="title" className="block text-sm font-medium text-gray-700">
+                Course SubCategeory
+              </label>
+              <select
+                id="quantity"
+                className="mt-1 p-3 block w-full border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                placeholder="Select a number"
+              >
+                <option value="">Select Sub-Category</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+              </select>
+            </div>
             <div className="mb-6">
               <label htmlFor="title" className="block text-sm font-medium text-gray-700">
                 Course Title
@@ -119,7 +133,6 @@ const VideoUpload = () => {
               />
             </div>
 
-            {/* Course Description */}
             <div className="mb-6">
               <label htmlFor="description" className="block text-sm font-medium text-gray-700">
                 Course Description
@@ -135,16 +148,16 @@ const VideoUpload = () => {
             <div className="flex justify-center">
               <button
                 type="submit"
-                className="py-3 px-6 bg-indigo-600 text-white font-semibold rounded-md shadow-md hover:bg-indigo-700 transition duration-200 ease-in-out"
+                className="py-2 px-6 bg-indigo-600 text-white font-semibold rounded-md shadow-md hover:bg-indigo-700 transition duration-200 ease-in-out"
               >
-                Upload Course
+                Upload
               </button>
             </div>
           </form>
         </div>
       </main>
     </div>
-  );
-};
+  )
+}
 
-export default VideoUpload;
+export default VideoUpload

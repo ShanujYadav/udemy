@@ -9,7 +9,7 @@ const Login = () => {
   const [userdata, setUser] = useState({ email: "", password: "" });
   const { user, loading, error } = useSelector((store) => store.auth);
 
-  const dispatch = useDispatch();
+  const dispatch = useDispatch()
 
   const handleChange = (e) => {
     const { name, value } = e.target;

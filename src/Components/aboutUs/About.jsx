@@ -11,7 +11,7 @@ const AboutUs = () => {
     }
 
     return (
-        <div className="max-w-7xl mx-auto">
+        <div className="max-w-7xl p-5 mx-auto">
             <div className="py-8 grid grid-cols-1 lg:grid-cols-2 gap-8">
                 <div className="space-y-4">
                     <div

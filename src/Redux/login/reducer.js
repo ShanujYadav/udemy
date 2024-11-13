@@ -18,4 +18,4 @@ export const authReducer = (store = initState, { type, payload }) => {
     default:
       return store;
   }
-};
+}

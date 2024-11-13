@@ -35,7 +35,7 @@ const CourseDetails = () => {
                             <p className="text-sm text-gray-400 mb-2">
                                 Development {'>'} Web Development
                             </p>
-                            <h1 className="text-2xl lg:text-4xl font-bold mb-4">
+                            <h1 className="text-2xl w-4/5 lg:text-4xl font-bold mb-4">
                                 Web Development Masterclass - Online Certification Course
                             </h1>
                             <p className="text-base text-gray-300 mb-4">

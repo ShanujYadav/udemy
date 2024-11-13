@@ -21,6 +21,7 @@ import PrivacyPolicy from "./Components/policy/PrivacyPolicy";
 import Blogs from "./Components/blog/Blogs";
 import CookieSetting from "./Components/policy/CookieSetting";
 import VideoUpload from "./Components/VideoUpload/VideoUpload";
+import MyCourse from "./Components/myCourse/MyCourse";
 
 
 export const App = () => {
@@ -36,6 +37,8 @@ export const App = () => {
         {/* <Route path="/payment" element={<Payment />}></Route> */}
         <Route path="/cart" element={<Cart />}></Route>
         <Route path="/wishlist" element={<Wishlist />}></Route>
+        <Route path="/my-course" element={<MyCourse />}></Route>
+        <Route path="/teach" element={<VideoUpload />}></Route>
 
         <Route path="/signup" element={<Signup />}></Route>
         <Route path="/login" element={<Login />}></Route>

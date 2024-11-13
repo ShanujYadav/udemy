@@ -6,7 +6,6 @@ const Courses = () => {
     <div>
       Course
       <Topbar />
-
     </div>
   )
 }
